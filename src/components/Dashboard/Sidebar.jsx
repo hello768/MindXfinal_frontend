@@ -126,7 +126,7 @@ function Sidebar({ isOpen, onClose, onSensorSelect, activeSensor }) {
           onClick={() => { 
             if (window.confirm("Say goodbye to Vartija?")) {
               localStorage.clear(); 
-              window.location.href = "/login"; 
+              window.location.href = "/"; 
             }
           }} 
           className="button3 w-full bg-[#202020] text-red-500 font-bold py-3 rounded-2xlborder-b border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]  flex justify-center items-center"
