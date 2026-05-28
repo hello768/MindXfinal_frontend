@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    min-height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #252525;
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #ff8c42;
+    padding-top: 20px;
+  }
+  
+  .menu-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #2f2f2f;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+
+  
+  .menu-item:hover {
+    background-color: #3a3a3a;
+  }
+  
+  .mobile-header {
+    display: none;
+    background-color: #252525;
+    padding: 15px 20px;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: #f0f0f0;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .mobile-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff8c42;
+    padding-top: 10px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-x: hidden;
+  }
+  
+  .info-section {
+    margin-bottom: 30px;
+  }
+  
+  .info-item {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .label {
+    color: #999;
+    margin-right: 10px;
+  }
+  
+  .value {
+    color: #f0f0f0;
+    font-weight: 500;
+  }
+  
+  .temperature-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #ff8c42;
+    margin: 20px 0;
+  }
+  
+  .timestamp {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  
+  .chart-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .chart-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .chart {
+    width: 100%;
+    height: 400px;
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .timestamps-list {
+    width: 200px;
+    background-color: #252525;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .timestamp-item {
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #333;
+  }
+  
+  .timestamp-item:last-child {
+    border-bottom: none;
+  }
+  
+  .point-label {
+    color: #ff8c42;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  @media (max-width: 968px) {
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      z-index: 1000;
+      transform: translateX(-100%);
+    }
+  
+    .sidebar.active {
+      transform: translateX(0);
+    }
+  
+    .mobile-header {
+      display: flex;
+    }
+  
+    .main-content {
+      padding: 20px;
+    }
+  
+    .chart-container {
+      flex-direction: column;
+    }
+  
+    .timestamps-list {
+      width: 100%;
+    }
+  
+    .overlay.active {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-content {
+      padding: 15px;
+    }
+  
+    .temperature-display {
+      font-size: 36px;
+    }
+  
+    .chart {
+      height: 300px;
+    }
+  }
+  
